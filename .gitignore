@@ -1,7 +1,16 @@
-/coverage
-/demo/dist
-/es
-/lib
-/node_modules
-/umd
-npm-debug.log*
+# idea & vscode
+.vscode
+.idea
+
+# test
+coverage
+
+# node
+node_modules
+yarn.lock
+
+# dist
+es
+lib
+dist
+
