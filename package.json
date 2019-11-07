@@ -1,15 +1,10 @@
 {
   "name": "react-disqus-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "react-disqus-components wrapper for official disqus web api",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "es",
-    "lib",
-    "umd"
-  ],
   "author": "Aquariuslt <superaquariuslt@gmail.com>",
   "homepage": "https://github.com/aquariuslt/react-disqus-components",
   "repository": "https://github.com/aquariuslt/react-disqus-components",

@@ -23,13 +23,16 @@ reports
 # editorconfig
 .editorconfig
 
+# git
+.gitignore
+
 # source
 src
+rollup.config.ts
 tsconfig.json
 
 # test
-__tests__
-
+tests
 
 # github workflow
 .github
