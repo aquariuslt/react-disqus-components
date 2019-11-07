@@ -81,6 +81,7 @@
   },
   "jest": {
     "moduleFileExtensions": [
+      "tsx",
       "ts",
       "js",
       "json"
@@ -89,7 +90,7 @@
       "^@/(.*)$": "<rootDir>/src/$1"
     },
     "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
+      "^.+\\.tsx$": "ts-jest"
     },
     "collectCoverageFrom": [
       "!<rootDir>/src/index.ts",
