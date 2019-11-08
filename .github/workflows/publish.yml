@@ -1,0 +1,26 @@
+name: publish
+
+on: [push]
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SCM
+        uses: actions/checkout@v1
+      - name: Setup Node Environment
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install Dependencies and Build
+        run: |
+          yarn
+          yarn build
+      - name: Run Tests With Docker-Compose
+        run: docker-compose -f docker-compose.test.yml up --exit-code-from lib
+      - name: Semantic Release
+        run: |
+          yarn release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

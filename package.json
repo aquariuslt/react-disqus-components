@@ -42,8 +42,8 @@
     "typescript": "^3.7.2"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
@@ -88,8 +88,7 @@
       "^.+\\.tsx$": "ts-jest"
     },
     "collectCoverageFrom": [
-      "!<rootDir>/src/index.ts",
-      "<rootDir>/src/**/*.ts"
+      "<rootDir>/src/**/*.tsx"
     ],
     "testMatch": [
       "<rootDir>/tests/**/*.test.tsx"
