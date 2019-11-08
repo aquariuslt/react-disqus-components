@@ -9,6 +9,11 @@
   "homepage": "https://github.com/aquariuslt/react-disqus-components",
   "repository": "https://github.com/aquariuslt/react-disqus-components",
   "license": "MIT",
+  "keywords": [
+    "disqus",
+    "react",
+    "functional-components"
+  ],
   "scripts": {
     "build": "tsc && rollup -c rollup.config.ts",
     "clean": "rimraf dist",
