@@ -38,6 +38,15 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
     }
   };
 
+  const removeDisqusThreadElement = () => {
+    const disqusThread = document.getElementById(DISQUS_THREAD);
+    if (disqusThread) {
+      while (disqusThread.hasChildNodes() && disqusThread.firstChild) {
+        disqusThread.removeChild(disqusThread.firstChild);
+      }
+    }
+  };
+
   const getDisqusConfig = () => {
     return function(this: any) {
       this.page.identifier = disqusConfig.identifier;
@@ -47,6 +56,7 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
   };
 
   const loadInstance = () => {
+    removeDisqusThreadElement();
     if (!document.getElementById(DISQUS_COMMENT_ELEMENT_ID) && disqusConfig.shortname) {
       window[DISQUS_CONFIG] = getDisqusConfig();
       window[DISQUS_SHORTNAME] = disqusConfig.shortname;
@@ -66,12 +76,7 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
       window[DISQUS_INSTANCE].reset();
       window[DISQUS_INSTANCE] = undefined;
       removeScript(DISQUS_COMMENT_ELEMENT_ID, document.body);
-      const disqusThread = document.getElementById(DISQUS_THREAD);
-      if (disqusThread) {
-        while (disqusThread.hasChildNodes() && disqusThread.firstChild) {
-          disqusThread.removeChild(disqusThread.firstChild);
-        }
-      }
+      removeDisqusThreadElement();
     }
   };
 
