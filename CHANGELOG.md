@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/aquariuslt/react-disqus-components/compare/v1.1.2...v1.1.3) (2019-11-10)
+
+
+### Bug Fixes
+
+* ensure `disqus_thread` element remove child nodes without itself ([25c0dba](https://github.com/aquariuslt/react-disqus-components/commit/25c0dbaf3df6e062cf20831e0d2a0b9b9440c8b3))
+
 ## [1.1.2](https://github.com/aquariuslt/react-disqus-components/compare/v1.1.1...v1.1.2) (2019-11-10)
 
 
