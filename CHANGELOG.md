@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/aquariuslt/react-disqus-components/compare/v1.1.4...v1.1.5) (2019-11-10)
+
+
+### Bug Fixes
+
+* update effect dependencies ([bccc9ed](https://github.com/aquariuslt/react-disqus-components/commit/bccc9ed27d18c78da8d1913061fd2e7877b6089f))
+
 ## [1.1.4](https://github.com/aquariuslt/react-disqus-components/compare/v1.1.3...v1.1.4) (2019-11-10)
 
 
