@@ -44,7 +44,6 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
       while (disqusThread.hasChildNodes() && disqusThread.firstChild) {
         disqusThread.removeChild(disqusThread.firstChild);
       }
-      disqusThread.remove();
     }
   };
 
@@ -57,8 +56,8 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
   };
 
   const loadInstance = () => {
-    removeDisqusThreadElement();
     if (!document.getElementById(DISQUS_COMMENT_ELEMENT_ID) && disqusConfig.shortname) {
+      removeDisqusThreadElement();
       window[DISQUS_CONFIG] = getDisqusConfig();
       window[DISQUS_SHORTNAME] = disqusConfig.shortname;
       insertScript(`https://${disqusConfig.shortname}.disqus.com/embed.js`, DISQUS_COMMENT_ELEMENT_ID, document.body);
