@@ -44,6 +44,7 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
       while (disqusThread.hasChildNodes() && disqusThread.firstChild) {
         disqusThread.removeChild(disqusThread.firstChild);
       }
+      disqusThread.remove();
     }
   };
 
