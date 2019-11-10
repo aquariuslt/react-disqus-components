@@ -81,7 +81,7 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
   useEffect(() => {
     loadInstance();
     return cleanInstance;
-  }, [props]);
+  }, [props.identifier]);
 
   return <div id={DISQUS_THREAD} />;
 };
