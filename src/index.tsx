@@ -41,8 +41,8 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
   const removeDisqusThreadElement = () => {
     const disqusThread = document.getElementById(DISQUS_THREAD);
     if (disqusThread) {
-      while (disqusThread.hasChildNodes() && disqusThread.firstChild) {
-        disqusThread.removeChild(disqusThread.firstChild);
+      while (disqusThread.hasChildNodes()) {
+        disqusThread.firstChild && disqusThread.removeChild(disqusThread.firstChild);
       }
     }
   };
@@ -56,26 +56,24 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
   };
 
   const loadInstance = () => {
-    if (!document.getElementById(DISQUS_COMMENT_ELEMENT_ID) && disqusConfig.shortname) {
+    if (window[DISQUS_INSTANCE] && document.getElementById(DISQUS_COMMENT_ELEMENT_ID)) {
+      window[DISQUS_INSTANCE].reset({
+        reload: true,
+        config: getDisqusConfig()
+      });
+    } else {
       removeDisqusThreadElement();
       window[DISQUS_CONFIG] = getDisqusConfig();
       window[DISQUS_SHORTNAME] = disqusConfig.shortname;
       insertScript(`https://${disqusConfig.shortname}.disqus.com/embed.js`, DISQUS_COMMENT_ELEMENT_ID, document.body);
-    } else {
-      if (window[DISQUS_INSTANCE]) {
-        window[DISQUS_INSTANCE].reset({
-          reload: true,
-          config: getDisqusConfig()
-        });
-      }
     }
   };
 
   const cleanInstance = () => {
-    if (window[DISQUS_INSTANCE] && document.getElementById(DISQUS_COMMENT_ELEMENT_ID)) {
+    removeScript(DISQUS_COMMENT_ELEMENT_ID, document.body);
+    if (window[DISQUS_INSTANCE]) {
       window[DISQUS_INSTANCE].reset();
       window[DISQUS_INSTANCE] = undefined;
-      removeScript(DISQUS_COMMENT_ELEMENT_ID, document.body);
       removeDisqusThreadElement();
     }
   };
