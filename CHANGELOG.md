@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/aquariuslt/react-disqus-components/compare/v1.1.5...v1.1.6) (2019-11-10)
+
+
+### Bug Fixes
+
+* update `shortname` checking ([2612278](https://github.com/aquariuslt/react-disqus-components/commit/26122783f077f1e04ad76970fc7b7a8c16c589ed))
+
 ## [1.1.5](https://github.com/aquariuslt/react-disqus-components/compare/v1.1.4...v1.1.5) (2019-11-10)
 
 
