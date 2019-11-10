@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/aquariuslt/react-disqus-components/compare/v1.1.1...v1.1.2) (2019-11-10)
+
+
+### Bug Fixes
+
+* ensure `disqus_thread` element remove when in SSR ([32a8f2c](https://github.com/aquariuslt/react-disqus-components/commit/32a8f2ccb7886a64a8f15af11cffeb3e9d4f5d07))
+
 ## [1.1.1](https://github.com/aquariuslt/react-disqus-components/compare/v1.1.0...v1.1.1) (2019-11-10)
 
 
