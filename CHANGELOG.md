@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/aquariuslt/react-disqus-components/compare/v1.1.0...v1.1.1) (2019-11-10)
+
+
+### Bug Fixes
+
+* ensure `disqus_thread` element reset when in SSR ([48c7cea](https://github.com/aquariuslt/react-disqus-components/commit/48c7ceabf3a488addbb1d524fdb2ddefc34be43b))
+
 # [1.1.0](https://github.com/aquariuslt/react-disqus-components/compare/v1.0.0...v1.1.0) (2019-11-09)
 
 
