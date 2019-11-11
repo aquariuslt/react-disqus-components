@@ -1,23 +1,29 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 
-export interface DisqusCommentProps {
-  title: string;
-  identifier: string;
-  url: string;
-  shortname: string;
-}
-
-const EMPTY_DISQUS_CONFIG = {
-  identifier: '',
-  url: '',
-  shortname: ''
-};
 const DISQUS_INSTANCE = 'DISQUS';
 const DISQUS_CONFIG = 'disqus_config';
 const DISQUS_SHORTNAME = 'disqus_shortname';
 const DISQUS_THREAD = 'disqus_thread';
 const DISQUS_COMMENT_ELEMENT_ID = 'dsq-embed-scr';
+
+const DEFER_LOADING_MS = 4000;
+
+export interface DisqusCommentProps {
+  title: string;
+  identifier: string;
+  url: string;
+  shortname: string;
+
+  defer?: number; // defer loading (ms)
+}
+
+const EMPTY_DISQUS_CONFIG = {
+  identifier: '',
+  url: '',
+  shortname: '',
+  defer: DEFER_LOADING_MS
+};
 
 export const Comment: React.FC<DisqusCommentProps> = (props) => {
   const disqusConfig = props || EMPTY_DISQUS_CONFIG;
@@ -56,19 +62,25 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
   };
 
   const loadInstance = () => {
-    if (window[DISQUS_INSTANCE] && document.getElementById(DISQUS_COMMENT_ELEMENT_ID)) {
-      window[DISQUS_INSTANCE].reset({
-        reload: true,
-        config: getDisqusConfig()
-      });
-    } else {
-      removeDisqusThreadElement();
-      if(props.shortname){
-        window[DISQUS_CONFIG] = getDisqusConfig();
-        window[DISQUS_SHORTNAME] = disqusConfig.shortname;
-        insertScript(`https://${disqusConfig.shortname}.disqus.com/embed.js`, DISQUS_COMMENT_ELEMENT_ID, document.body);
+    setTimeout(() => {
+      if (window[DISQUS_INSTANCE] && document.getElementById(DISQUS_COMMENT_ELEMENT_ID)) {
+        window[DISQUS_INSTANCE].reset({
+          reload: true,
+          config: getDisqusConfig()
+        });
+      } else {
+        removeDisqusThreadElement();
+        if (props.shortname) {
+          window[DISQUS_CONFIG] = getDisqusConfig();
+          window[DISQUS_SHORTNAME] = disqusConfig.shortname;
+          insertScript(
+            `https://${disqusConfig.shortname}.disqus.com/embed.js`,
+            DISQUS_COMMENT_ELEMENT_ID,
+            document.body
+          );
+        }
       }
-    }
+    }, props.defer);
   };
 
   const cleanInstance = () => {
