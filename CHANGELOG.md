@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/aquariuslt/react-disqus-components/compare/v1.1.6...v1.2.0) (2019-11-11)
+
+
+### Features
+
+* add defer loading in props ([0ba056b](https://github.com/aquariuslt/react-disqus-components/commit/0ba056bde276d78e94d9eba42fe78769d85d394a))
+
 ## [1.1.6](https://github.com/aquariuslt/react-disqus-components/compare/v1.1.5...v1.1.6) (2019-11-10)
 
 
