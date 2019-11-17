@@ -80,7 +80,7 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
           );
         }
       }
-    }, props.defer);
+    }, disqusConfig.defer);
   };
 
   const cleanInstance = () => {
