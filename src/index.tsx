@@ -26,7 +26,7 @@ const EMPTY_DISQUS_CONFIG = {
 };
 
 export const Comment: React.FC<DisqusCommentProps> = (props) => {
-  const disqusConfig = props || EMPTY_DISQUS_CONFIG;
+  const disqusConfig = Object.assign({}, EMPTY_DISQUS_CONFIG, props);
 
   const insertScript = (src, id, parentElement) => {
     const script = window.document.createElement('script');
