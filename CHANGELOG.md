@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/aquariuslt/react-disqus-components/compare/v1.2.0...v1.2.1) (2019-11-17)
+
+
+### Bug Fixes
+
+* enable lazy initial ([524b085](https://github.com/aquariuslt/react-disqus-components/commit/524b08538e859043136fa95c5e8ea1ec8ae77c70))
+
 # [1.2.0](https://github.com/aquariuslt/react-disqus-components/compare/v1.1.6...v1.2.0) (2019-11-11)
 
 
