@@ -31,7 +31,7 @@ describe('component: comment', () => {
     el.setAttribute('id', ELEMENT_ID);
     document.body.append(el);
     ReactDOM.render(
-      <Comment title="" identifier={MOCK_DISQUS_IDENTIFIER} url={MOCK_DISQUS_URL} shortname={MOCK_DISQUS_SHORTNAME} />,
+      <Comment title="" identifier={MOCK_DISQUS_IDENTIFIER} url={MOCK_DISQUS_URL} shortname={MOCK_DISQUS_SHORTNAME} defer={0}/>,
       document.getElementById(ELEMENT_ID)
     );
 
