@@ -22,6 +22,9 @@
     "test:cov": "jest --coverage",
     "release": "semantic-release"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {},
   "devDependencies": {
     "@semantic-release/changelog": "5.0.0",
