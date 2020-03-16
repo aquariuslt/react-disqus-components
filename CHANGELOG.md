@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/aquariuslt/react-disqus-components/compare/v1.2.2...v1.2.3) (2020-03-16)
+
+
+### Bug Fixes
+
+* remove preload iframe when cleanup ([e7d41f5](https://github.com/aquariuslt/react-disqus-components/commit/e7d41f5eb65585aa0a8b83ed46ff2ad87c0901d1))
+
 ## [1.2.2](https://github.com/aquariuslt/react-disqus-components/compare/v1.2.1...v1.2.2) (2019-11-17)
 
 
