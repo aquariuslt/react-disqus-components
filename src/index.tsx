@@ -6,6 +6,7 @@ const DISQUS_CONFIG = 'disqus_config';
 const DISQUS_SHORTNAME = 'disqus_shortname';
 const DISQUS_THREAD = 'disqus_thread';
 const DISQUS_COMMENT_ELEMENT_ID = 'dsq-embed-scr';
+const DISQUS_PRELOAD_IFRAME_SELECTOR = 'iframe[id^=dsq-app]';
 
 const DEFER_LOADING_MS = 4000;
 
@@ -29,7 +30,7 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
   const disqusConfig = Object.assign({}, EMPTY_DISQUS_CONFIG, props);
 
   const insertScript = (src, id, parentElement) => {
-    const script = window.document.createElement('script');
+    const script = document.createElement('script');
     script.async = true;
     script.src = src;
     script.id = id;
@@ -38,7 +39,7 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
   };
 
   const removeScript = (id, parentElement) => {
-    const script = window.document.getElementById(id);
+    const script = document.getElementById(id);
     if (script) {
       parentElement.removeChild(script);
     }
@@ -48,10 +49,24 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
     const disqusThread = document.getElementById(DISQUS_THREAD);
     if (disqusThread) {
       while (disqusThread.hasChildNodes()) {
+        console.debug('cleaning disqus thread element');
         disqusThread.firstChild && disqusThread.removeChild(disqusThread.firstChild);
       }
     }
   };
+
+  const removeDisqusPreloadFrameElement = () => {
+    const disqusPreloadFrame = document.querySelectorAll(DISQUS_PRELOAD_IFRAME_SELECTOR);
+
+    if (disqusPreloadFrame){
+      console.debug('cleaning disqus preload frame (dsq-app) element');
+      disqusPreloadFrame.forEach((value,key,parent)=>{
+        value.parentElement.removeChild(value);
+      });
+    }
+
+  };
+
 
   const getDisqusConfig = () => {
     return function(this: any) {
@@ -89,6 +104,7 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
       window[DISQUS_INSTANCE].reset();
       window[DISQUS_INSTANCE] = undefined;
       removeDisqusThreadElement();
+      removeDisqusPreloadFrameElement();
     }
   };
 
@@ -97,5 +113,5 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
     return cleanInstance;
   }, [props.identifier]);
 
-  return <div id={DISQUS_THREAD} />;
+  return <div id={DISQUS_THREAD}/>;
 };
