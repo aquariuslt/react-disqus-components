@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import * as ReactDOM from 'react-dom';
-import { Comment } from '../src/index';
+import { Comment } from '../index';
 import * as React from 'react';
 
 describe('component: comment', () => {

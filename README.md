@@ -2,7 +2,7 @@
 
 [![NPM](https://img.shields.io/npm/v/react-disqus-components.svg)](https://www.npmjs.com/package/react-disqus-components) 
 [![Github Workflow Status](https://github.com/aquariuslt/react-disqus-components/workflows/ci/badge.svg)](https://github.com/aquariuslt/react-disqus-components) 
-[![codecov](https://codecov.io/gh/aquariuslt/react-disqus-components/branch/master/graph/badge.svg)](https://codecov.io/gh/aquariuslt/react-disqus-components) 
+[![Codecov](https://codecov.io/gh/aquariuslt/react-disqus-components/branch/master/graph/badge.svg)](https://codecov.io/gh/aquariuslt/react-disqus-components) 
 [![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 

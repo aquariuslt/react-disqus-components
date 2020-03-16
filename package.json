@@ -23,7 +23,8 @@
     "release": "semantic-release"
   },
   "files": [
-    "dist"
+    "dist",
+    "index.ts"
   ],
   "dependencies": {},
   "devDependencies": {
@@ -101,7 +102,7 @@
       "<rootDir>/src/**/*.tsx"
     ],
     "testMatch": [
-      "<rootDir>/tests/**/*.test.tsx"
+      "<rootDir>/src/__tests__/**/*.test.tsx"
     ],
     "coverageDirectory": "<rootDir>/reports/coverage"
   },

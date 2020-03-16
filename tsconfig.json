@@ -1,19 +1,24 @@
 {
   "compilerOptions": {
+    "module": "commonjs",
     "declaration": true,
-    "declarationDir": "./dist",
-    "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "noUnusedParameters": true,
-    "strictNullChecks": true,
-    "moduleResolution": "node",
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "noImplicitAny": false,
-    "outDir": "./dist",
-    "sourceRoot": "./src",
     "target": "es5",
+    "sourceMap": false,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "skipLibCheck": true,
     "jsx": "react"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/__tests__"
+  ]
 }
