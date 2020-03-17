@@ -49,7 +49,6 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
     const disqusThread = document.getElementById(DISQUS_THREAD);
     if (disqusThread) {
       while (disqusThread.hasChildNodes()) {
-        console.debug('cleaning disqus thread element');
         disqusThread.firstChild && disqusThread.removeChild(disqusThread.firstChild);
       }
     }
@@ -59,7 +58,6 @@ export const Comment: React.FC<DisqusCommentProps> = (props) => {
     const disqusPreloadFrame = document.querySelectorAll(DISQUS_PRELOAD_IFRAME_SELECTOR);
 
     if (disqusPreloadFrame){
-      console.debug('cleaning disqus preload frame (dsq-app) element');
       disqusPreloadFrame.forEach((value,key,parent)=>{
         value.parentElement.removeChild(value);
       });
