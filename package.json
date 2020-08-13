@@ -44,7 +44,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "rimraf": "3.0.2",
-    "rollup": "2.23.1",
+    "rollup": "2.24.0",
     "rollup-plugin-typescript": "1.0.1",
     "semantic-release": "17.1.1",
     "ts-jest": "26.2.0",
