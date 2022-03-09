@@ -28,8 +28,8 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@semantic-release/changelog": "5.0.1",
-    "@semantic-release/git": "9.0.1",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/git": "10.0.1",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.26",
     "@types/react": "17.0.39",
@@ -46,7 +46,7 @@
     "rimraf": "3.0.2",
     "rollup": "2.69.2",
     "rollup-plugin-typescript": "1.0.1",
-    "semantic-release": "17.4.7",
+    "semantic-release": "19.0.2",
     "ts-jest": "26.5.6",
     "tslib": "2.3.1",
     "typescript": "4.6.2"
