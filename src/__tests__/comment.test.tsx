@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import * as ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom/client';
 import { Comment } from '../index';
 import * as React from 'react';
 
@@ -13,7 +13,8 @@ describe('component: comment', () => {
     const el = document.createElement('div');
     el.setAttribute('id', ELEMENT_ID);
     document.body.append(el);
-    ReactDOM.render(<Comment title="" identifier="" url="" shortname="" />, document.getElementById(ELEMENT_ID));
+    ReactDOM.createRoot(document.getElementById(ELEMENT_ID)).render(<Comment title='' identifier='' url=''
+                                                                             shortname='' />);
   });
 
   it('# should create disqus comment div when not exists', async (done) => {
@@ -30,9 +31,10 @@ describe('component: comment', () => {
     const el = document.createElement('div');
     el.setAttribute('id', ELEMENT_ID);
     document.body.append(el);
-    ReactDOM.render(
-      <Comment title="" identifier={MOCK_DISQUS_IDENTIFIER} url={MOCK_DISQUS_URL} shortname={MOCK_DISQUS_SHORTNAME} defer={0}/>,
+    ReactDOM.createRoot(
       document.getElementById(ELEMENT_ID)
+    ).render(<Comment title='' identifier={MOCK_DISQUS_IDENTIFIER} url={MOCK_DISQUS_URL}
+                      shortname={MOCK_DISQUS_SHORTNAME} defer={0} />
     );
 
     _.delay(() => {
