@@ -1,10 +1,10 @@
-import typescript from 'rollup-plugin-typescript';
+const typescript = require('@rollup/plugin-typescript');
 
 const pkg = require('./package.json');
 
 const libraryName = pkg.name;
 
-export default {
+module.exports = {
   input: `src/index.tsx`,
   output: [
     {
