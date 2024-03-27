@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: SCM
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Node Environment
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Install Dependencies and Build
@@ -17,7 +17,7 @@ jobs:
           yarn
           yarn test:cov
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           file: ./reports/coverage/lcov.info
